@@ -1,0 +1,4 @@
+*.sqlite
+.envrc
+node_modules/
+package-lock.json
