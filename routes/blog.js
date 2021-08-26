@@ -6,7 +6,6 @@ const sequelize = require("sequelize");
 const slugify = require("slugify");
 const Promise = require("bluebird");
 
-
 const router = express.Router();
 
 // Render the home page and list all blog posts
@@ -20,7 +19,25 @@ router.get("/", (req, res) => {
       post = post.get({ plain: true });
         postData.push({
           title: post.title,
-          body: post.body,
+          cargo: post.cargo,
+          nome: post.nome,
+          cpf: post.cpf,
+          ident: post.ident,
+          nasc: post.nasc,
+          civil: post.civil,
+          sexo: post.sexo,
+          cep: post.cep,
+          rua: post.rua,
+          bairro: post.bairro,
+          cidade: post.cidade,
+          estado: post.estado,
+          telefone: post.telefone,
+          celular: post.celular,
+          email: post.email,
+          veiculo: post.veiculo,
+          habilitacao: post.habilitacao,
+
+          //body: post.body,
           createdAt: post.createdAt,
           slug: post.slug
         });
@@ -50,7 +67,25 @@ router.get("/dashboard", (req, res, next) => {
 router.post("/dashboard", (req, res, next) => {
   models.Post.create({
     title: req.body.title,
-    body: req.body.body,
+    cargo: req.body.cargo,
+    nome: req.body.nome,
+    cpf: req.body.cpf,
+    ident: req.body.ident,
+    nasc: req.body.nasc,
+    civil: req.body.civil,
+    sexo: req.body.sexo,
+    cep: req.body.cep,
+    rua: req.body.rua,
+    bairro: req.body.bairro,
+    cidade: req.body.cidade,
+    estado: req.body.estado,
+    telefone: req.body.telefone,
+    celular: req.body.celular,
+    email: req.body.email,
+    veiculo: req.body.veiculo,
+    habilitacao: req.body.habilitacao,
+
+    // body: req.body.body,
     slug: slugify(req.body.title).toLowerCase()
   }).then(newPost => {
     models.Post.findAll({
@@ -66,7 +101,6 @@ router.post("/dashboard", (req, res, next) => {
     });
   });
 });
-
 
 // View a post
 router.get("/:slug", (req, res, next) => {
@@ -88,6 +122,5 @@ router.get("/:slug", (req, res, next) => {
     res.render("post", { post });
   });
 });
-
 
 module.exports = router;

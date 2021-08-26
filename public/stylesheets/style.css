@@ -4,12 +4,26 @@ footer {
   margin-top: 1em;
 }
 
+body {
+  background: url(../img/branco.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
 .nav {
   float: right;
 }
 
+h1 {
+  margin-bottom: 2em;
+  font-size: 5em;
+  color: black;
+}
+
 h2 {
   margin-bottom: 2em;
+  font-size: 3em;
+  color: black;
 }
 
 .posts ul {
@@ -46,7 +60,9 @@ hr.bottom {
 }
 
 .submit-btn {
-  float: right;
+  width: 15%;
+  float: left;
+  background: black;
 }
 
 .alert p {

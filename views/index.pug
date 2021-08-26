@@ -4,15 +4,21 @@ block variables
   - var title = "Home"
 
 block content
-  h2.text-center Recent Posts
+  h2.text-center JobsNet 
 
-  if posts == null
-    p.empty.text-center Uh oh. There are no posts to view!
+  h3.text-center O maior banco de talentos da internet! 
 
-  .posts
-    ul
-      each post in posts
-        .row
-          .offset-sm-2.col-sm-8
-            li
-              a(href="/" + post.slug, title=post.title)= post.title
+  p.text-center Venha fazer arte de revolução! 
+
+
+
+  //- if posts == null
+  //-   p.empty.text-center Uh oh. There are no posts to view!
+
+  //- .posts
+  //-   ul
+  //-     each post in posts
+  //-       .row
+  //-         .offset-sm-2.col-sm-8
+  //-           li
+  //-             a(href="/" + post.slug, title=post.title)= post.title

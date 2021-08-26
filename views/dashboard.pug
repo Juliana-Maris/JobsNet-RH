@@ -8,7 +8,7 @@ block content
 
   .row
     .offset-sm-2.col-sm-8
-      h2 Create a Post
+      h2 Formulário de cadastro
 
   if post != undefined
     .row
@@ -23,19 +23,72 @@ block content
           label(for="title") Post Title
           input.form-control#title(type="text", name="title", placeholder="Title", required)
         .form-group
-          label(for="body") Post Body
-          textarea.form-control#post(name="body", rows="6", required)
-        button.btn.btn-primary.submit-btn(type="submit") Submit
+           label(for="cargo") Cargo Pretendido
+           input.form-control#cargo(type="text", name="cargo", placeholder="cargo", required)
+        .form-group
+          label(for="nome") Nome
+          input.form-control#nome(type="text", name="nome", placeholder="nome", required)
+        .form-group
+          label(for="cpf") CPF
+          input.form-control#cpf(type="text", name="cpf", placeholder="cpf", required)
+        .form-group
+          label(for="ident") Identidade
+          input.form-control#ident(type="text", name="ident", placeholder="ident", required)
+        .form-group
+          label(for="nasc") Data de Nascimento
+          input.form-control#nasc(type="date", name="nasc", required)
+        .form-group
+          label(for="civil") Estado Civil
+          input.form-control#civil(type="text", name="civil", placeholder="civil")
+        .form-group
+          label(for="sexo") Sexo
+          input.form-control#sexo(type="text", name="sexo", placeholder="sexo") 
+        .form-group
+          label(for="cep") CEP
+          input.form-control#cep(type="text", name="cep", placeholder="cep", required)
+        .form-group
+          label(for="rua") Rua
+          input.form-control#rua(type="text", name="rua", placeholder="rua", required)
+        .form-group
+          label(for="bairro") Bairro
+          input.form-control#bairro(type="text", name="bairro", placeholder="bairro", required)
+        .form-group   
+          label(for="cidade") Cidade
+          input.form-control#cidade(type="text", name="cidade", placeholder="cidade", required)
+        .form-group
+          label(for="estado") Estado
+          input.form-control#estado(type="text", name="estado", placeholder="estado", required)
+        .form-group
+          label(for="telefone") Telefone
+          input.form-control#telefone(type="text", name="telefone", placeholder="telefone", required)
+        .form-group
+          label(for="celular") Celular
+          input.form-control#celular(type="text", name="celular", placeholder="celular", required)
+        .form-group 
+          label(for="email") Email
+          input.form-control#email(type="text", name="email", placeholder="email", required)
+        .form-group  
+          label(for="veiculo") Possui Veículo Próprio?
+          input.form-control#veiculo(type="text", name="veiculo") 
+        .form-group
+          label(for="habilitacao") Possui Habilitação?
+          input.form-control#habilitacao(type="text", name="habilitacao")   
+
+        //- .form-group
+        //-   label(for="body") Post Body
+        //-   textarea.form-control#post(name="body", rows="6", required)
+
+        button.btn.btn-primary.submit-btn(type="submit") Enviar
 
 
-  .row
-    .offset-sm-2.col-sm-8
-      h2.your-posts Your Posts
-      ul.edit
-        each post in posts
-          li
-            a(href="/" + post.slug, title=post.title)= post.title
-            form.hidden(method="post", action="/" + post.slug + "/delete")
-              button.btn.btn-outline-danger.delete Delete
-            a(href="/" + post.slug + "/edit", title=post.title)
-              button.btn.btn-outline-secondary Edit
+  //- .row
+  //-   .offset-sm-2.col-sm-8
+  //-     h2.your-posts Your Posts
+  //-     ul.edit
+  //-       each post in posts
+  //-         li
+  //-           a(href="/" + post.slug, title=post.title)= post.title
+  //-           form.hidden(method="post", action="/" + post.slug + "/delete")
+  //-             button.btn.btn-outline-danger.delete Delete
+  //-           a(href="/" + post.slug + "/edit", title=post.title)
+  //-             button.btn.btn-outline-secondary Edit
